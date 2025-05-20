@@ -31,6 +31,9 @@
 
 ### Установка
 
+0. Сначала установите git: 
+https://git-scm.com/download/win
+
 1. Клонируйте репозиторий:
 ```bash
 git clone https://github.com/Dmitr-93/mathAI.git
