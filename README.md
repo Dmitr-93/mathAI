@@ -50,17 +50,17 @@ pip install -r requirements.txt
 ### Запуск приложения
 
 ```bash
-streamlit run app.py 
+streamlit run main.py 
 ```
 или 
 
 ```bash
-python -m streamlit run app.py 
+python -m streamlit run main.py 
 ```
 
 ## 🏗 Архитектура проекта
 
-- `app.py` - основной файл приложения с UI и логикой
+- `main.py` - основной файл приложения с UI и логикой
 - `database.py` - функции для работы с базой данных
 - `task_generator.py` - генерация задач через OpenRouter API
 
