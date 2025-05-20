@@ -52,7 +52,12 @@ pip install -r requirements.txt
 ### Запуск приложения
 
 ```bash
-streamlit run app.py
+streamlit run app.py 
+```
+или 
+
+```bash
+python -m streamlit run app.py 
 ```
 
 ## 🏗 Архитектура проекта
