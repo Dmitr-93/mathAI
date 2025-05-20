@@ -32,7 +32,7 @@
 ### Установка
 
 0. Сначала установите git: 
-https://git-scm.com/download/win
+https://git-scm.com/download/win 
 
 1. Клонируйте репозиторий:
 ```bash
@@ -40,14 +40,7 @@ git clone https://github.com/Dmitr-93/mathAI.git
 cd mathAI
 ```
 
-2. Создайте и активируйте виртуальное окружение:
-```bash
-python -m venv .venv
-source .venv/bin/activate  # для Linux/Mac
-.\.venv\Scripts\activate   # для Windows
-```
-
-3. Установите зависимости:
+2. Установите зависимости:
 ```bash
 pip install -r requirements.txt
 ```
