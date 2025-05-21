@@ -8,11 +8,10 @@ from PIL import Image
 import traceback
 import time
 import openai
+from openai import OpenAI
 
 # Настройки API
-API_KEY = "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"
-openai.api_key = API_KEY
-openai.api_base = "https://openrouter.ai/api/v1"
+API_KEY = "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"
 
 # Подключение к базе данных (используем conn из глобальной области видимости)
 conn = None # Инициализируем позже в main
@@ -243,16 +242,22 @@ def generate_task(task_type):
     Убедись, что задача соответствует формату ЕГЭ и имеет четкое решение."""
     
     try:
-        completion = openai.ChatCompletion.create(
-            headers={
+        # Создаем клиент OpenAI с настройками OpenRouter
+        client = OpenAI(
+            base_url="https://openrouter.ai/api/v1",
+            api_key=API_KEY,
+        )
+        
+        completion = client.chat.completions.create(
+            extra_headers={
                 "HTTP-Referer": "http://localhost:8501",
                 "X-Title": "EGE Generator",
             },
-            model="qwen/qwen3-235b-a22b:free",
+            model="qwen/qwen3-0.6b-04-28:free",
             messages=[
-                {"role": "system", "content": "Ты - эксперт по математике и подготовке к ЕГЭ."},
                 {"role": "user", "content": prompt}
-            ]
+            ],
+            max_tokens=16000
         )
         
         task_text = completion.choices[0].message.content
